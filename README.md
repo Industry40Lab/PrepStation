@@ -22,9 +22,20 @@ The high level system architecture is shown:
 
 ## Packages Description:
 
-The package "moveitinterface_cpp" is a wrapper of MoveIt c++ API where the cobot trajectory is planned.
+The package "moveitinterface_cpp" is a wrapper of MoveIt C++ API where the cobot trajectory is planned.
+
 The package "robot_interface" contains the service for open/close of ur5e gripper. 
+
 The package "panda_info" contains the messages being communincatd between stations. 
+
 The package "panda_workstation" is the package installed on the control station publishing the information of defective PCBs to the reworking station.
 
 The package "rs_location_retrival" receives the RGB-D images from the RealSense camera D435i, localizes the desolering tools and publishes the corresponding coordinates.
+
+## Packages dependencies:
+
+moveit;
+universal robot
+realsense camera
+
+ros1/2 bridge
