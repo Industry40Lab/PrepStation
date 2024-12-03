@@ -7,8 +7,15 @@ By the end of Dec 2024, the project will have completed its first year and the i
 
 ## Use Case Description:
 A defective PCB is identified in the control station, then the control station transmits data of the PCB and the relevant non-functional components to the reworking station; in the reworking station, an UR5e cobot identifies appropriate tools
-and prepares the setup of the workspace for the operator. In the meanwhile, an AGV transports the defective PCB from the control station to the reworking station. At the time of arrival, the UR5e cobot unloads the defective PCB. 
-The workspace must be prepared before the arrival of the operator. 
+and prepares the setup of the workspace for the operator. In the meanwhile, an AGV transports the defective PCB from the control station to the reworking station. At the time of arrival, the UR5e cobot unloads the defective PCB. The workspace must be prepared before the arrival of the operator. 
+The workflow of usecase is depicted below:
 <div style="text-align:center;">
-<img src="material/arise_usecase1.png" alt="Alt text" width="300"/>
+<img src="material/arise_usecase1.png" alt="Alt text" width="480"/>
 </div>
+
+The high level system architecture is shown
+<div style="text-align:center;">
+<img src="material/arise_usecase1_system architecture.png" alt="Alt text" width="480"/>
+</div>
+ where the AGV operates on ROS1 Noetic and two cobots operate on ROS2. The ROS1/2 bridge is used to exchange data among devices.
+
