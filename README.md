@@ -19,3 +19,6 @@ The high level system architecture is shown
 </div>
  where the AGV operates on ROS1 Noetic and two cobots operate on ROS2. The ROS1/2 bridge is used to exchange data among devices.
 
+<p align="center">
+  <img src="material/arise_usecase1.png" alt="Image 1" width="480"/></a>
+</p>
