@@ -26,7 +26,6 @@ class MoveRobotClass{
         void goToPoseGoal(const geometry_msgs::msg::Pose& goalpose);
         geometry_msgs::msg::PoseStamped getCurrentPose(const std::string& end_effector_linkk = "");
 
-        // void moveAlongAxis(int value,std::string direction);
     
         const std::shared_ptr<rclcpp::Node> node;
         const std::string PLANNING_GROUP;
@@ -38,7 +37,6 @@ class MoveRobotClass{
         moveit::planning_interface::MoveGroupInterface::Plan my_plan;
 
   //
-  // Next get the current set of joint values for the group.
         
 
 };

@@ -197,29 +197,7 @@ def launch_setup(context, *args, **kwargs):
         "warehouse_host": warehouse_sqlite_path,
     }
 
-    # Start the actual move_group node/action server
-    # move_group_node = Node(
-    #     package="moveit_ros_move_group",
-    #     executable="move_group",
-    #     output="screen",
-    #     parameters=[
-    #         robot_description,
-    #         robot_description_semantic,
-    #         robot_description_kinematics,
-    #         robot_description_planning,
-    #         ompl_planning_pipeline_config,
-    #         trajectory_execution,
-    #         moveit_controllers,
-    #         planning_scene_monitor_parameters,
-    #         {"use_sim_time": use_sim_time},
-    #         warehouse_ros_config,
-    #     ],
-    # )
-
-    # rviz with moveit configuration
-    # rviz_config_file = PathJoinSubstitution(
-    #     [FindPackageShare(moveit_config_package), "rviz", "view_robot.rviz"]
-    # )
+  
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
@@ -235,19 +213,9 @@ def launch_setup(context, *args, **kwargs):
         ],
     )
 
-    move_group_demo = Node(
-        package="moveitinterface_cpp",
-        executable="movegrp_ur5e",
-        output="screen",
-        parameters=[
-            robot_description,
-            robot_description_semantic,
-            robot_description_kinematics,
-            robot_description_planning,
-        ],
-    )
 
-    move_group_demo2 = Node(
+
+    move_group_demo = Node(
         package="moveitinterface_cpp",
         executable="usecase1_agv_pick",
         output="screen",
@@ -275,7 +243,7 @@ def launch_setup(context, *args, **kwargs):
         output="screen",
     )
 
-    nodes_to_start = [move_group_demo2]
+    nodes_to_start = [move_group_demo]
 
     return nodes_to_start
 

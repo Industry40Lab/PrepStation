@@ -16,7 +16,6 @@ find_package(moveit_ros_planning_interface REQUIRED)
 find_package(moveit_ros_planning_interface REQUIRED)
 find_package(robot_interface REQUIRED)
 
-#find_package(planning_scene_interface REQUIRED)
 
 set(THIS_PACKAGE_INCLUDE_DEPENDS
   moveit
@@ -30,8 +29,7 @@ add_executable(movegrp_ur5e src/move_ur5e_mz.cpp src/moverobotclass.cpp)
 ament_target_dependencies(movegrp_ur5e rclcpp Boost ${THIS_PACKAGE_INCLUDE_DEPENDS})
 target_link_libraries(movegrp_ur5e ${moveitinterface_cpp_LIBRARIES})
 
-# add_executable(git_dm src/githu.cpp )
-# ament_target_dependencies(git_dm rclcpp Boost ${THIS_PACKAGE_INCLUDE_DEPENDS})
+
 
 add_executable(usecase1_moverobot src/move_robot_usecase1.cpp src/moverobotclass.cpp)
 ament_target_dependencies(usecase1_moverobot rclcpp robot_interface Boost ${THIS_PACKAGE_INCLUDE_DEPENDS})
@@ -42,8 +40,6 @@ ament_target_dependencies(usecase1_agv_pick rclcpp robot_interface Boost ${THIS_
 target_link_libraries(usecase1_agv_pick ${moveitinterface_cpp_LIBRARIES})
 
 install(TARGETS
-  movegrp_ur5e
-  # git_dm
   usecase1_moverobot
   usecase1_agv_pick
   DESTINATION   lib/${PROJECT_NAME}
