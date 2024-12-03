@@ -7,7 +7,6 @@ By the end of Dec 2024, the project will have completed its first year and the i
 
 ## Use Case Description:
 
-<p align="center">
-  <img src="materials/arise_usecase1.png" alt="Image 1" width="200"/>
-</p>
-
+<div style="text-align:center;">
+<img src="material/arise_usecase1.png" alt="Alt text" width="300"/>
+</div>
