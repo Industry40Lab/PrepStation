@@ -25,9 +25,6 @@ set(THIS_PACKAGE_INCLUDE_DEPENDS
 
 include_directories(include)
 
-add_executable(movegrp_ur5e src/move_ur5e_mz.cpp src/moverobotclass.cpp)
-ament_target_dependencies(movegrp_ur5e rclcpp Boost ${THIS_PACKAGE_INCLUDE_DEPENDS})
-target_link_libraries(movegrp_ur5e ${moveitinterface_cpp_LIBRARIES})
 
 
 

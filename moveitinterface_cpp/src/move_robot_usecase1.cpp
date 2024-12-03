@@ -157,7 +157,4 @@ int main(int argc, char **argv){
 }
 
 
-// std::vector<double> robot_config_pcb_on_agv{0.0876822, -0.423569, 1.41204, 3.76274, -1.55298, 3.18319 };
-// std::vector<double> robot_config_pcb_on_agv_move_to_up {0.0840025, -1.30054, 1.41209, 4.575, -1.55296, 3.18322 };
-// std::vector<double> robot_config_pcb_on_agv_move_to_place {0.804673, -1.55329, 2.18319, 4.18462, -1.6228, 3.97436 };
-// std::vector<double> robot_config_home_position {1.77919, -1.5818, 2.03653, 4.2764, -1.52085, 3.41678};
+
