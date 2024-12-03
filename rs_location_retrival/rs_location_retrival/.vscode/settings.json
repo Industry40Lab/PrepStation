@@ -1,0 +1,13 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/i40lab/arise_ws/install/ur_movment_manager/lib/python3.10/site-packages",
+        "/home/i40lab/arise_ws/install/rs_location_retrival/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/i40lab/arise_ws/install/ur_movment_manager/lib/python3.10/site-packages",
+        "/home/i40lab/arise_ws/install/rs_location_retrival/lib/python3.10/site-packages",
+        "/opt/ros/iron/lib/python3.10/site-packages"
+    ],
+    "ros.distro": "iron"
+}
