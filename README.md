@@ -20,7 +20,7 @@ The high level system architecture is shown:
 
  where the AGV operates on ROS1 Noetic and two cobots operate on ROS2. The ROS1/2 bridge is used to exchange data among devices.
 
-## Packages Description:
+## Packages in the repositroy:
 
 The package "moveitinterface_cpp" is a wrapper of MoveIt C++ API where the cobot trajectory is planned.
 
@@ -32,10 +32,51 @@ The package "panda_workstation" is the package installed on the control station 
 
 The package "rs_location_retrival" receives the RGB-D images from the RealSense camera D435i, localizes the desolering tools and publishes the corresponding coordinates.
 
-## Packages dependencies:
+## Prerequisites:
+The robot trajectory has been planned using <a href="https://github.com/moveit/moveit2/tree/main">Moveit2</a>.
+The driver of Universal Robot has been installed using official <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver/tree/main"> Universal_Robots_ROS2_Driver</a> repositroy. 
 
-moveit;
-universal robot
-realsense camera
+The driver of Intel RealSense D435i camera has been installed using 
+<a href="https://github.com/IntelRealSense/realsense-ros">librealsense</a> repositroy.
 
-ros1/2 bridge
+The driver of Robotiq Hande gripper is installed using 
+<a href="https://github.com/patsyuk03/RobotiqHandeROS2Driver/tree/main">RobotiqHandeROS2Driver</a> repositroy.
+
+The bridge communication between ROS1 and ROS2 is made using this
+<a href="https://github.com/ros2/ros1_bridge"> repositroy</a>.
+For the localization purpose, it is necessary to calibrate the camera's coordinates with respect to the robot's origin. The calibration is carried out using this repo which is implemented in ROS1.
+## Command lines executions
+
+1. run this command 
+```bash
+  ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5e robot_ip:=192.168.0.100 launch_rviz:=false
+```
+to establish the communication between the PC and the UR5e.
+2. In a new terminal, run this command 
+```bash
+   ros2 launch ur_moveit_config ur_moveit.launch.py ur_type:="ur5e" launch_rviz:=false
+```
+to launch moveit2 config for trajectory planning.
+3. In a new terminal, run the command
+```bash
+  ros2 launch robotiq_hande_ros2_driver gripper_bringup.launch.py robot_ip:=192.168.0.100
+```
+to establish the communication with Hande gripper.
+4. Run the following commands in the seperate terminals for the unloading of defective pcbs from AGV's tray
+```bash
+  ros2 launch moveitinterface_cpp agv_pick.launch.py ur_type:="ur5e"
+```
+and pick/place of the desolering tool on the table
+```bash
+  ros2 launch moveitinterface_cpp pick_component.launch.py ur_type:="ur5e"
+```
+5. In a new terminal, run 
+```bash
+  ros2 launch realsense2_camera rs_launch.py
+```
+to establish the communication with the D435i camera.
+6. In a new terminal, run
+```bash
+  ros2 run rs_location_retrival localization 
+```
+for the localization of desolering tool. 
