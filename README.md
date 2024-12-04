@@ -44,7 +44,8 @@ The driver of Robotiq Hande gripper is installed using
 
 The bridge communication between ROS1 and ROS2 is made using this
 <a href="https://github.com/ros2/ros1_bridge"> repositroy</a>.
-For the localization purpose, it is necessary to calibrate the camera's coordinates with respect to the robot's origin. The calibration is carried out using this repo which is implemented in ROS1.
+
+For the localization purpose, it is necessary to calibrate the camera's coordinates with respect to the robot's origin coordinate. The calibration is carried out using <a href="https://github.com/IFL-CAMP/easy_handeye">this repo</a> which is implemented in ROS1.
 ## Command lines executions
 
 1. run this command 
