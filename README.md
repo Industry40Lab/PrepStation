@@ -95,10 +95,12 @@ Temporal Storage / Mintaka / TimescaleDB
      v
 Grafana Dashboard
 ```
-
 <p align="center">
-  <img src="repo_images/SF_architecture.png" width="440" heigth="250"/></a>
+  <!-- ---------- ARISE logo ---------- -->
+  <!-- Light mode -->
+  <img src="repo_images/SF_architecture.png" width="400" height="300"/>
 </p>
+
 The main design decision is to separate the annotated image from the semantic metadata. The broker receives lightweight structured data, while Grafana uses the stored image URL to display the detection result.
 
 ---
@@ -230,7 +232,7 @@ Response fields:
 <p align="center">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
-  <img src="repo_images/gui.png"  width= "440" heigth="250"/>
+  <img src="repo_images/gui.png"  width= "300" height="300"/>
 </p>
 
 ---
@@ -309,7 +311,9 @@ Grafana reads the stored PCB metadata and displays the result as an inspection p
 The resulting dashboard view shows the detected model output for the incoming RGB frame, enabled by Orion-LD, temporal storage, and the DDS-to-NGSI-LD message translation layer.
 
 <p align="center">
-  <img src="repo_images/grafanalive.png"  width= "440" heigth="250"/>
+  <!-- ---------- ARISE logo ---------- -->
+  <!-- Light mode -->
+  <img src="repo_images/grafanalive.png"  width= "300" height="300"/>
 </p>
 
 ---
