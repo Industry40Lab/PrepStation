@@ -20,11 +20,11 @@
 )](https://releases.ubuntu.com/24.04/)
 ---
 
-# PCB component Detection Module
+# PrepStation PCB IC Detection Module
 
-This repo provides a reusable ROS 2 and FIWARE-based module for detecting Integrated Circuits (ICs) on Printed Circuit Boards (PCBs), publishing the resulting inspection metadata, and visualizing the detected results on a Grafana dashboard.
+PrepStation provides a reusable ROS 2 and FIWARE-based module for detecting Integrated Circuits (ICs) on Printed Circuit Boards (PCBs), publishing the resulting inspection metadata, and visualizing the detected results on a Grafana dashboard.
 
-The module is focused on a inspection workflow:
+The module is focused on a simple industrial inspection workflow:
 
 1. An RGB frame of a PCB is received as input.
 2. A ROS 2 detection service sends the frame to a YOLO-based IC detection server.
@@ -41,7 +41,7 @@ This structure makes the IC detection logic reusable in other PCB inspection sta
 
 ## General Overview
 
-The module implementation is organized as a perception-to-dashboard pipeline for PCB IC detection. The core detection component is implemented as a ROS 2 service. The service server runs the IC detection model, receives an RGB PCB frame, detects the target IC/component, and returns the annotated detection result.
+The second-year PrepStation implementation is organized as a perception-to-dashboard pipeline for PCB IC detection. The core detection component is implemented as a ROS 2 service. The service server runs the IC detection model, receives an RGB PCB frame, detects the target IC/component, and returns the annotated detection result.
 
 Large image payloads are not sent directly to the context broker. Instead, the annotated PCB image is uploaded to a FastAPI image server, and only the resulting image URL plus structured PCB metadata are forwarded to the broker pipeline.
 
@@ -98,7 +98,7 @@ Grafana Dashboard
 <p align="center">
   <!-- ---------- ARISE logo ---------- -->
   <!-- Light mode -->
-  <img src="repo_images/SF_architecture.png" width="400" height="300"/>
+  <img src="repo_images/SF_architecture.png" alt="Logo for light mode" height="500"/>
 </p>
 
 The main design decision is to separate the annotated image from the semantic metadata. The broker receives lightweight structured data, while Grafana uses the stored image URL to display the detection result.
@@ -229,12 +229,6 @@ Response fields:
 | `location_y` | `float64[]` | Y coordinates of detected IC/component centers. |
 | `component_class` | `uint8[]` | Detected IC/component class IDs. |
 
-<p align="center">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="repo_images/gui.png"  width= "300" height="300"/>
-</p>
-
 ---
 
 ### 4. Annotated image upload
@@ -309,12 +303,6 @@ Grafana reads the stored PCB metadata and displays the result as an inspection p
 - Annotated PCB image loaded from the FastAPI image URL.
 
 The resulting dashboard view shows the detected model output for the incoming RGB frame, enabled by Orion-LD, temporal storage, and the DDS-to-NGSI-LD message translation layer.
-
-<p align="center">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="repo_images/grafanalive.png"  width= "300" height="300"/>
-</p>
 
 ---
 
