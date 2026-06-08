@@ -97,7 +97,7 @@ Grafana Dashboard
 ```
 
 <p align="center">
-  <img src="repo_images/SF_architecture.png" width="540" heigth="250"/></a>
+  <img src="repo_images/SF_architecture.png" width="440" heigth="250"/></a>
 </p>
 The main design decision is to separate the annotated image from the semantic metadata. The broker receives lightweight structured data, while Grafana uses the stored image URL to display the detection result.
 
