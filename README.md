@@ -1,25 +1,3 @@
-<p align="center">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="repo_images/ARISE_logo-light_mode.png#gh-light-mode-only" alt="Logo for light mode" height="60"/>
-  <!-- Dark mode -->
-  <img src="repo_images/ARISE_logo-dark_mode.png#gh-dark-mode-only" alt="Logo for dark mode" height="60"/>
-</p>
-
-
-<p align="center">
-  These 
-  Modules are part of the ARISE Middleware<br>
-  <a href="https://arise-middleware.eu/">ARISE Middleware site</a>
-</p>
-
-
-
-[![vulcanexus](https://img.shields.io/badge/Vulcanexus%20Version-Jazzy-%230895CD?style=flat)](https://github.com/eProsima/vulcanexus)
-[![ubuntu24](https://img.shields.io/badge/Ubuntu-24.04-%23E95420?style=flat&logo=ubuntu
-)](https://releases.ubuntu.com/24.04/)
----
-
 # PrepStation PCB IC Detection Module
 
 PrepStation provides a reusable ROS 2 and FIWARE-based module for detecting Integrated Circuits (ICs) on Printed Circuit Boards (PCBs), publishing the resulting inspection metadata, and visualizing the detected results on a Grafana dashboard.
@@ -492,16 +470,3 @@ PrepStation implements a reusable PCB IC detection module where the detection mo
 ## License
 
 This repository is distributed under the GPL-3.0 license. Individual ROS 2 packages may include their own package-level license metadata.
-
----
-This project has received funding from **Horizon Europe** research and innovation programme under grant agreement **no. 101135784**.
-
-<p align="left">
-  <!-- ---------- ARISE logo ---------- -->
-  <!-- Light mode -->
-  <img src="repo_images/EN_FundedbytheEU_RGB_POS.png#gh-light-mode-only" alt="EU Funding for light mode" height="100"/>
-
-  <!-- Dark mode -->
-  <img src="repo_images/EN_FundedbytheEU_RGB_NEG.png#gh-dark-mode-only" alt="EU Funding for dark mode" height="100"/>
-
-</p>
