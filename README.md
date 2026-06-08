@@ -9,8 +9,8 @@
 
 <p align="center">
   These 
-  Modules are part of the ARISE project<br>
-  <a href="https://arise-middleware.eu/">ARISE All-in-One-Middleware site</a>
+  Modules are part of the ARISE Middleware<br>
+  <a href="https://arise-middleware.eu/">ARISE Middleware site</a>
 </p>
 
 
